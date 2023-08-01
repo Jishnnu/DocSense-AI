@@ -2,7 +2,6 @@ bs4
 torch
 einops
 requests
-chromadb
 streamlit
 langchain
 accelerate
@@ -10,3 +9,4 @@ pdfminer.six
 bitsandbytes
 transformers
 sentence_transformers
+chromadb==0.3.29
