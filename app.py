@@ -69,8 +69,8 @@ def main():
         st.info("QUESTION: " + question)
         st.info("ANSWER: ")
         answer, metadata = process_answers(question)
-        st.write(metadata)
         st.write(answer)
+        st.write(metadata)
 
 if __name__ == "__main__":
     main()
