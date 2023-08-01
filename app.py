@@ -56,11 +56,11 @@ def process_answers(instructions):
     return answer, generated_text
 
 def main():
-    st.title('DocSense')
+    st.title('DocSense AI')
     with st.expander("About"):
         st.markdown(
             """
-            Welcome to AI DocSense, your go-to web app for expertly answering AI-related questions. Ask us anything, and we'll provide expert answers to your AI-related queries, making complex concepts simple. Empowering knowledge through intuitive interactions with Generative AI.
+            Welcome to DocSense AI, your go-to web app for expertly answering AI-related questions. Ask us anything, and we'll provide expert answers to your AI-related queries, making complex concepts simple. Empowering knowledge through intuitive interactions with Generative AI.
             """
         )
     
