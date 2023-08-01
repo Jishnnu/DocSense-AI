@@ -10,14 +10,15 @@ from constants import CHROMA_SETTINGS
 
 checkpoint = "LaMini-Flan-T5-783M"
 tokenizer = AutoTokenizer.from_pretrained(checkpoint)
-model = AutoModelForSeq2SeqLM.from_pretrained(
+base_model = AutoModelForSeq2SeqLM.from_pretrained(
     checkpoint,
     device_map="auto",   # Check device configurations for better computation
     torch_dtype=torch.float32
 )
 
+@st.cache_resource
 def llm_pipeline():
-    pipe = pipeline(
+    pipeline = pipeline(
         'text2text-generation',
         model=base_model,
         tokenizer=tokenizer,
@@ -26,3 +27,6 @@ def llm_pipeline():
         temperature=0.3,
         top_p=0.95
     )
+
+    local_llm = HuggingFacePipeline(pipeline=pipeline)
+    return local_llm
