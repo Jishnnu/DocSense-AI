@@ -22,9 +22,15 @@ def main():
     embeddings = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
 
     # Define vector store
-    db = Chroma.from_documents(texts, embeddings, persist_directory=persist_directory, client_settings=CHROMA_SETTINGS)
+    db = Chroma.from_documents(
+        texts, 
+        embeddings, 
+        persist_directory=persist_directory, 
+        client_settings=CHROMA_SETTINGS
+        )
+    
     db.persist()
     db = None
 
-    if __name__ == "__main__":
-        main()
+if __name__ == "__main__":
+    main()
