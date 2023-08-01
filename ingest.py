@@ -23,4 +23,8 @@ def main():
 
     # Define vector store
     db = Chroma.from_documents(texts, embeddings, persist_directory=persist_directory, client_settings=CHROMA_SETTINGS)
-    
+    db.persist()
+    db = None
+
+    if __name__ == "__main__":
+        main()
